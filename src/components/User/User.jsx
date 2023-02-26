@@ -1,3 +1,17 @@
-export const User = ({user}) => {
-  console.log(user)
-}
+import PropTypes from 'prop-types';
+
+export const User = ({ user: { name, email } }) => {
+  return (
+    <>
+      <p>Name: {name}</p>
+      <p>Email: {email}</p>
+    </>
+  );
+};
+
+User.protoTypes = {
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    }).isRequired
+  }
